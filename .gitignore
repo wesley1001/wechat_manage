@@ -1,0 +1,14 @@
+/public/css
+/public/fonts
+/public/images
+/public/js
+_ide_helper.php
+/bootstrap/compiled.php
+/vendor
+/node_modules
+.env.*.php
+.env.php
+.env
+.idea/*
+/public/build/*
+/resources/assets/bower
