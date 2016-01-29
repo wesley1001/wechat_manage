@@ -1,0 +1,25 @@
+{
+  "name": "wechat_manage",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Fakeronline/wechat_manage",
+  "authors": [
+    "lilichun <1077341744@qq.com>"
+  ],
+  "description": "wechat manage system",
+  "keywords": [
+    "wechat",
+    "manage"
+  ],
+  "license": "fakeronline",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/static/package",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "H-ui": "https://github.com/Fakeronline/H-ui.admin.git"
+  }
+}
