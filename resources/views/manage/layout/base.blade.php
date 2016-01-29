@@ -31,7 +31,7 @@
 {!! link_script('static/package/H-ui', [
     'lib/jquery/1.9.1/jquery.min.js', 'lib/layer/2.1/layer.js', 'js/H-ui.js', 'js/H-ui.admin.js'
 ]) !!}
-{!! link_script('static/manage/js', 'common.js') !!}
+{!! link_script('static/js', 'app.js') !!}
 @section('js')
 @show
 </body>
