@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('manage.index');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +23,14 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['prefix' => 'manage', 'middleware' => 'web', 'namespace' => 'Manage'], function () {
+    Route::get('auth/captcha', 'Auth\AuthController@getCaptcha');
+    Route::auth();
+    Route::get('/', 'HomeController@index');
 });
+
+//Route::group(['middleware' => 'web'], function () {
+//    Route::auth();
+//
+//    Route::get('/home', 'HomeController@index');
+//});
