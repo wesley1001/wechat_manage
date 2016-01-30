@@ -1,15 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Manage\Auth;
 
+use Illuminate\Http\Request;
 use App\Models\User;
+use Gregwar\Captcha\CaptchaBuilder;
 use Validator;
+use Session;
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+
+    /**
+     * @var string 登录的视图
+     */
+    protected $loginView = 'manage.login';
+
+    /**
+     * @var string 退出登录后跳转的页面
+     */
+    protected $redirectAfterLogout = '/manage';
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -28,13 +43,9 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/manage';
 
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
@@ -43,7 +54,7 @@ class AuthController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -58,7 +69,7 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)
@@ -69,4 +80,17 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * 获取验证码
+     * @param CaptchaBuilder $builder
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
+    public function getCaptcha(CaptchaBuilder $builder)
+    {
+        $builder->build(100);
+        Session::put('captcha', $builder->getPhrase());
+        return response($builder->output(), 200, ['Content-type', 'image/jpeg']);
+    }
+
 }
