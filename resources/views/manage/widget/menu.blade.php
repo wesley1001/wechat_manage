@@ -93,6 +93,14 @@
                 </ul>
             </dd>
         </dl>
+        <dl>
+            <dt> <i class="Hui-iconfont">&#xe62e;</i> 权限控制 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i> </dt>
+            <dd>
+                <ul>
+                    <li><a href="/" data-title="模块管理">模块设置</a> </li>
+                </ul>
+            </dd>
+        </dl>
         <dl id="menu-system">
             <dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>

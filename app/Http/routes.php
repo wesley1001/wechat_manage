@@ -26,8 +26,10 @@
 Route::group(['prefix' => 'manage', 'middleware' => 'web', 'namespace' => 'Manage'], function () {
     Route::get('auth/captcha', 'Auth\AuthController@getCaptcha');
     Route::auth();
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@index');    //
 });
+
+Route::resource('test', 'Manage\TestController');
 
 //Route::group(['middleware' => 'web'], function () {
 //    Route::auth();
