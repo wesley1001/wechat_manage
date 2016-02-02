@@ -5,9 +5,9 @@
 ]) !!}
 @section('content')
     <div class="pd-20">
-        <form action="" method="post" class="form form-horizontal" id="form-article-add">
-            @include('manage.module.form')
-        </form>
+        {!! Form::open(['url' => route('manage.module.store'), 'method' => 'POST', 'class' => 'form form-horizontal', 'id' => 'form-module-add']) !!}
+        @include('manage.module.form')
+        {!! Form::close() !!}
     </div>
 @stop
 
@@ -17,5 +17,19 @@
     ]) !!}
     <script>
         handleCheck();  //初始化iCheck
+        $(document).on('click', '#create-module', function () {
+            $.ajax({
+                url: "{{route('manage.module.store')}}",
+                type: "POST",
+                data: $("#form-module-add").serialize(),
+                success: function () {
+                    layer.msg(data.msg, {icon: 6, time: 1000});
+                },
+                error: function (data) {
+                    layer.msg(data.msg, {icon: 6, time: 1000});
+                }
+            });
+            return false;
+        });
     </script>
 @stop

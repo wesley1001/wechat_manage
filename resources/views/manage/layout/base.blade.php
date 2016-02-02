@@ -21,6 +21,16 @@
         'css/H-ui.min.css', 'css/H-ui.admin.css', 'lib/Hui-iconfont/1.0.6/iconfont.css', 'css/style.css',
     ]) !!}
     {!! link_css('static/css', 'admin-app.css') !!}
+    <script>
+        $(function () {
+            //设置AJAX header头
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                }
+            });
+        });
+    </script>
     @section('css')
     @show
 </head>
