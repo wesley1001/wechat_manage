@@ -78,3 +78,17 @@ function link_script($base_path, $file_name, $secure = null)
     $script_tpl = '<script type="text/javascript" src="%s"></script>';
     return html_file_link($script_tpl, $base_path, $file_name, $secure);
 }
+
+/**
+ * 将数组中的KEY变为数组中的值
+ * @param $array
+ * @return array
+ */
+function array_value_value($array)
+{
+    $result = [];
+    foreach ($array as $key => $value) {
+        $result[$value] = $value;
+    }
+    return $result;
+}

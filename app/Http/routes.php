@@ -15,6 +15,7 @@
 /*
 |--------------------------------------------------------------------------
 | Application Routes
+
 |--------------------------------------------------------------------------
 |
 | This route group applies the "web" middleware group to every route
@@ -24,9 +25,13 @@
 */
 
 Route::group(['prefix' => 'manage', 'middleware' => 'web', 'namespace' => 'Manage'], function () {
-    Route::get('auth/captcha', 'Auth\AuthController@getCaptcha');
     Route::auth();
-    Route::get('/', 'HomeController@index');    //
+    Route::get('/', 'HomeController@index');    //控制面板
+    Route::resource('module', 'ModuleController');  //模块管理
+});
+
+Route::get('tt', function(){
+    return view('manage.module.edit');
 });
 
 Route::resource('test', 'Manage\TestController');

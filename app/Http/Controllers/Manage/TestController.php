@@ -17,6 +17,16 @@ class TestController extends BaseController
      */
     public function index()
     {
+        return response(['aa' => '123'], 400);
+        dd(app(\App\Contracts\IAclModule::class)->routeModuleList());
+
+        die;
+
+        foreach(\Route::getRoutes() as $item){
+            dd($item->getAction());
+        }
+
+        die;
         dump(\Route::currentRouteAction());
         foreach(\Route::getRoutes() as $item){
 //            dd($item);
