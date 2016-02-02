@@ -20,7 +20,7 @@ class HomeController extends BaseController
      */
     public function index()
     {
-        return view("index");
+        return view("manage.index");
     }
 
     public function panel()

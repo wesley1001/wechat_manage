@@ -1,10 +1,28 @@
 <?php namespace App\Http\Controllers\Manage;
 
+/**
+ * Class TestController
+ * @package App\Http\Controllers\Manage
+ */
 class TestController extends BaseController
 {
+
+    public function __construct()
+    {
+//        $this->middleware('auth');
+    }
+
+    /**
+     * @Get("test99999", lilichun123="chun")
+     */
     public function index()
     {
-        dd($this->moduleUri);
-        echo '123123';
+        dump(\Route::currentRouteAction());
+        foreach(\Route::getRoutes() as $item){
+//            dd($item);
+            dump($item->getAction());
+        }
+
+        return '123123';
     }
 }
