@@ -17,7 +17,7 @@
 <div class="row cl">
     {!! Form::label('ident', '模块描述：', ['class' => 'form-label col-2']) !!}
     <div class="formControls col-10">
-        {!! Form::input('text', 'name', null, ['class' => 'input-text']) !!}
+        {!! Form::input('text', 'desc', null, ['class' => 'input-text']) !!}
     </div>
 </div>
 

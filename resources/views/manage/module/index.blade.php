@@ -85,7 +85,7 @@
     <script>
         handleTable();
         $(document).on('click', "a[data-id='create_module']", function(){
-            layer_show('添加模块', 'https://www.baidu.com');
+            layer_show('添加模块', '{{route('manage.module.create')}}', 700, 400);
         });
 
     </script>

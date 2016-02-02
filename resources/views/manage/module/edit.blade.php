@@ -21,12 +21,14 @@
             $.ajax({
                 url: "{{route('manage.module.store')}}",
                 type: "POST",
+                async: false,
                 data: $("#form-module-add").serialize(),
-                success: function () {
-                    layer.msg(data.msg, {icon: 6, time: 1000});
+                success: function (msg) {
+                    window.close();
+                    layer.msg(msg, {icon: 6, time: 1000});
                 },
-                error: function (data) {
-                    layer.msg(data.msg, {icon: 6, time: 1000});
+                error: function (msg) {
+                    layer.msg(msg, {icon: 6, time: 1000});
                 }
             });
             return false;
