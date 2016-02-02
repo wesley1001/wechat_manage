@@ -1,4 +1,6 @@
 @extends('manage.layout.base')
+@include('manage.widget.header')
+@include('manage.widget.menu')
 @section('content')
 <section class="Hui-article-box">
     <div id="Hui-tabNav" class="Hui-tabNav">
@@ -19,7 +21,7 @@
     <div id="iframe_box" class="Hui-article">
         <div class="show_iframe">
             <div style="display:none" class="loading"></div>
-            {{--<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>--}}
+            <iframe scrolling="yes" frameborder="0" src="{{route('manage.module.index')}}"></iframe>
         </div>
     </div>
 </section>
