@@ -7,7 +7,8 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     protected $bindingList = [
-        \App\Contracts\ICustomCache::class => \App\Realizes\CustomCache::class
+        \App\Contracts\ICustomCache::class => \App\Realizes\CustomCache::class,
+        \App\Contracts\IAclModule::class => \App\Realizes\AclModule::class,
     ];
 
     /**

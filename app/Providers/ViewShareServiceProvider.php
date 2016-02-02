@@ -16,7 +16,8 @@ class ViewShareServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('manage.login', "{$this->viewShareClass}@intoCaptcha");
+        view()->composer('manage.login', "{$this->viewShareClass}@intoCaptcha");    //登录验证码
+        view()->composer('manage.module.form', "{$this->viewShareClass}@intoModuleList");
     }
 
     /**
