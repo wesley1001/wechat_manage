@@ -23,4 +23,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * 该用户下的所有权限组
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function group()
+    {
+        return $this->belongsToMany(AclGroup::class, 'acl_user_groups', 'user_id', 'group_id');
+    }
+
 }
