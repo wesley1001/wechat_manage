@@ -15,8 +15,8 @@ class CreateAclRouteModule extends Migration
         Schema::create('acl_modules', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name', 50);    //模块名
-            $table->string('ident', 255);   //标识
+            $table->string('name');   //模块名
+            $table->string('label');    //标签名
             $table->string('desc', 255);    //描述
             $table->tinyInteger('status')->default(1)->unsigned();  //启用状态
             $table->integer('created_at');
