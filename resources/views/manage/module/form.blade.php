@@ -1,7 +1,7 @@
 <div class="row cl">
-    {!! Form::label('ident', '模块名称：', ['class' => 'form-label col-2']) !!}
+    {!! Form::label('label', '模块名称：', ['class' => 'form-label col-2']) !!}
     <div class="formControls col-10">
-        {!! Form::input('text', 'name', null, ['class' => 'input-text']) !!}
+        {!! Form::input('text', 'label', null, ['class' => 'input-text']) !!}
     </div>
 </div>
 
@@ -9,13 +9,13 @@
     <label class="form-label col-2"><span class="c-red">*</span>选择模块：</label>
     <div class="formControls col-10">
         <span class="select-box">
-            {!! Form::select('ident', $moduleList, null, ['class' => 'select']) !!}
+            {!! Form::select('name', $moduleList, null, ['class' => 'select']) !!}
         </span>
     </div>
 </div>
 
 <div class="row cl">
-    {!! Form::label('ident', '模块描述：', ['class' => 'form-label col-2']) !!}
+    {!! Form::label('desc', '模块描述：', ['class' => 'form-label col-2']) !!}
     <div class="formControls col-10">
         {!! Form::input('text', 'desc', null, ['class' => 'input-text']) !!}
     </div>
